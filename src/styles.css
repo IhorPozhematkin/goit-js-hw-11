@@ -63,6 +63,8 @@ button:focus {
 .photo-card {
     background-color: burlywood;
     padding: 10px;
+    width: 250px;
+    height: 320px;
 }
 
 .img_wrap {
@@ -74,10 +76,4 @@ button:focus {
 .gallery_link {
     display: block;
     text-decoration: none;
-}
-
-.load-more {
-    margin: 50px auto;
-    width: 100px;
-    background-color: lightgray;
 }

@@ -49,7 +49,6 @@ function onSubmitForm(event) {
 
             };
             if (data.totalHits > perPage) {
-                btnLoadMore.classList.remove('is-hidden');
                 window.addEventListener('scroll', showLoadMorePage);
             };
         })

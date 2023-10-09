@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
-import { lightbox } from './js/simple-lightbox';
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 import { fetchCard } from './js/pixabay';
 import { createMarkup } from './js/markup';
 import { refs } from './js/refs';
@@ -46,8 +47,12 @@ async function handlerSubmit(e) {
         top: 0,
         behavior: 'smooth',
     });
-    lightbox = new SimpleLightbox('.gallery a');
-}
+
+    const lightbox = new SimpleLightbox('.gallery a', {
+      captionsData: 'alt',
+      captionDelay: 250,
+    });
+  }
   
 async function handlerObserver(entries, observer) {
     entries.forEach(async entry => {

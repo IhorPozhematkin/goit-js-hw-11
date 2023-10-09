@@ -49,6 +49,7 @@ function onSubmitForm(event) {
 
             };
             if (data.totalHits > perPage) {
+                // btnLoadMore.classList.remove('is-hidden');
                 window.addEventListener('scroll', showLoadMorePage);
             };
         })
@@ -70,7 +71,7 @@ function onClickLoadMore() {
             if (page === numberOfPage) {
                 btnLoadMore.classList.add('is-hidden');
                 Notify.info("We're sorry, but you've reached the end of search results.", paramsForNotify);
-                btnLoadMore.removeEventListener('click', onClickLoadMore);
+                // btnLoadMore.removeEventListener('click', onClickLoadMore);
                 window.removeEventListener('scroll', showLoadMorePage);
             };
             lightbox.refresh();

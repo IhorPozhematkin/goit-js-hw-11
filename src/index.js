@@ -8,6 +8,7 @@ import { refs } from './js/refs';
 const { form, button, gallery } = refs;
 let searchValue = '';
 let page = 1;
+let lightbox = {};
 
 const options = {
   root: null,
@@ -48,7 +49,7 @@ async function handlerSubmit(e) {
         behavior: 'smooth',
     });
 
-    const lightbox = new SimpleLightbox('.gallery a', {
+    lightbox = new SimpleLightbox('.gallery a', {
       captionsData: 'alt',
       captionDelay: 250,
     });
@@ -72,5 +73,6 @@ async function handlerObserver(entries, observer) {
       } catch {
             Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
       }
+      lightbox.refresh();
     });
 }

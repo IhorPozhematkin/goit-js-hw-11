@@ -8,12 +8,12 @@ const { form, button, gallery } = refs;
 let searchValue = '';
 let page = 1;
 
-const options = {
-    root: null,
-    rootMargin: '100px',
-    threshold: 1.0,
-  };
-const observer = new IntersectionObserver(handlerObserver, options);
+const optionsObserver = {
+  root: null,
+  rootMargin: '200px',
+  threshold: 1.0,
+};
+const observer = new IntersectionObserver(handlerObserver, optionsObserver);
 const target = document.querySelector('#target');
   
 form.addEventListener('submit', handlerSubmit);
